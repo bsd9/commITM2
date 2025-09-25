@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: commitm2-deployment
+  labels:
+    app: commitm2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: commitm2
+  template:
+    metadata:
+      labels:
+        app: commitm2
+    spec:
+      containers:
+      - name: commitm2
+        image: commitm2:latest     # nombre de la imagen que construyas con tu Dockerfile
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080      # << usa
