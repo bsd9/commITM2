@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: commitmwebapi-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: commitmwebapi
+  template:
+    metadata:
+      labels:
+        app: commitmwebapi
+    spec:
+      containers:
+      - name: commitmwebapi
+        image: commitmwebapi:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        args:
+        - /bin/sh
+        - -c
+        - |
+          echo 'app.Urls.Add("http://*:8080");' >> /path/to/your/appsettings/file
