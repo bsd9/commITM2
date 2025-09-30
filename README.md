@@ -10,7 +10,8 @@
 
 ## Link De Video Youtube
 
-[Ver video]([https://youtu.be/mTeYAJ7OQU8](https://drive.google.com/file/d/1l5Qmh9O8AXGkzwdusqsbtTAGOjsxbIEt/view?usp=sharing))
+[Ver video](https://drive.google.com/file/d/1l5Qmh9O8AXGkzwdusqsbtTAGOjsxbIEt/view?usp=sharing)
+
 ## Evidencias
 
 ### Contenedor Docker Corriendo
