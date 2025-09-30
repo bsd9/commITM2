@@ -1,25 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: commitmwebapi-deployment
+  name: commitm2-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: commitmwebapi
+      app: commitm2
   template:
     metadata:
       labels:
-        app: commitmwebapi
+        app: commitm2
     spec:
       containers:
-      - name: commitmwebapi
-        image: commitmwebapi:latest
+      - name: commitm2
+        image: commitm2:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
-        args:
-        - /bin/sh
-        - -c
-        - |
-          echo 'app.Urls.Add("http://*:8080");' >> /path/to/your/appsettings/file
+        env:
+        - name: ASPNETCORE_URLS
+          value: "http://+:8080" # Listen on all network interfaces
+        - name: DOTNET_RUNNING_IN_CONTAINER
+          value: "true"          # Optional, for logging behavior
+        - name: DOTNET_HOST_PATH
+          value: "/usr/share/dotnet" # Optional, only needed if using volumes

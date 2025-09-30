@@ -11,6 +11,42 @@
 ## Link De Video Youtube
 
 [Ver en YouTube](https://youtu.be/mTeYAJ7OQU8)
+
+
+## Comandos Docker
+
+```
+docker build -t commitm2:latest .
+
+docker run -it --rm -p 8080:8080 commitm2:latest
+```
+
+Go to [localhost 8080](http://localhost:8080/swagger/index.html).
+
+## Comandos Kubernetes
+
+```
+kubectl apply -f deployment.yaml
+
+kubectl apply -f service.yaml
+
+kubectl port-forward svc/commitm2-service 30080:8080
+```
+
+Go to [localhost 30080](http://localhost:30080/swagger/index.html).
+
+## Comandos Utiles
+
+```
+kubectl get deployments
+kubectl delete deployment commitm2-deployment
+
+kubectl get pods
+
+kubectl get svc
+kubectl delete svc commitm2-service
+```
+
 ## Evidencias
 
 ### Contenedor Docker Corriendo
